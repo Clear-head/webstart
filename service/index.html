@@ -9,9 +9,8 @@
 </head> 
 <body>
     <div id="window">
-        
         <div class="row">
-            <div class="col-3">
+            <div class="col-5">
                 <aside>
                     <div id="left-content">
                         <img id="my_img" src="../resourse/img/coffee.gif"><br></img>
@@ -30,7 +29,7 @@
                     </div>
                 </aside>
             </div>
-
+            
             <div class="col">
                 <div id="main-content" class="row">
                     <div id="header" class="col">
@@ -38,41 +37,75 @@
                     </div>
                     
                     <!-- 내 소개 간단 문장 -->
-                    <div class="sentence">
-                         <h1>About me</h1>
+                    <div id="about-me" class="col">
+                        
+                        <h1>😊About me</h1>
                         <p>
                             <hr>문제를 발견하고, 그것을 도구와 코드로 해결하는 과정을 좋아합니다.<br>
                             사용자 입장에서 UX를 고민하고, 협업 중 발생하는 이슈를 중재하며,
                             성장을 위해 새로운 도전을 즐기는 실전형 개발자입니다.
                         </p>
                     </div>
+                    <div class="container">
+                        <div id="Stack" class="col">
 
-                    <!-- 자격증 -->
-                    <div class="col">
-                        <h1>Certificate</h1>
-                        <hr>
-                        <p>
-                            1. 운전 면허 1종 보통<br>
-                            2. Microsoft PowerPoint (office 2016)<br>
-                            3. Microsoft Excel Expert (office 2016)<br>
-                            4. Adobe Certified Professional in Visual Design Using Adobe Photoshop<br>
-                        </p>
-                        <h1>Study</h1>
-                        <hr>
-                        <p>
-                            <a href="https://problems.tistory.com/">블로그</a><br>
-                            <a href="https://github.com/nvmith/November">알고리즘 스터디</a>
-                        </p>
-                        <h1>Award</h1>
-                        <p>
-                            교내 2023 프로젝트 경진 대회 동상 수상
-                        </p>
+                            <h1><span>🛠Stack</h1>
+                            <hr>
+                            <p>
+                                Python, Java
+                            </p>
+
+                        </div>
+                        <div id="certificate" class="col">
+                            <h1>📙Certificate</h1>
+                            <hr>
+                            <p>
+                                1. 운전 면허 1종 보통<br>
+                                2. Microsoft PowerPoint (office 2016)<br>
+                                3. Microsoft Excel Expert (office 2016)<br>
+                                4. Adobe Certified Professional in Visual Design Using Adobe Photoshop<br>
+                            </p>
+                        </div>
+                        <div id="study" class="col">
+                            <h1>✏Study</h1>
+                            <hr>
+                            <p>
+                                <a href="https://problems.tistory.com/">블로그</a><br>
+                                <a href="https://github.com/nvmith/November">알고리즘 스터디</a>
+                            </p>    
+                        </div>
+                        <div id="award" class="col">
+                            <h1>🎉Award</h1>
+                            <hr>
+                            <p>
+                                교내 2023 프로젝트 경진 대회 동상 수상
+                            </p>    
+                        </div>
+                    
+                    
+                        <!-- 프로젝트 설명 카드 -->
+                        <div id="porject" class="col">
+                            <h1>Project</h1>
+                            <hr>
+                            <div id="project-card"></div>
+                            <script>
+                                async function loadHtml(url) {
+                                    try {
+                                        const response = await fetch(url);
+                                        if (!response.ok) {
+                                            throw new Error(`HTTP 오류: ${response.status}`);
+                                        }
+                                        const html = await response.text();
+                                        // 가져온 HTML을 DOM에 삽입
+                                        document.getElementById("project-card").innerHTML = html;
+                                    } catch (error) {
+                                        console.error("HTML 파일 불러오기 오류:", error);
+                                    }
+                                }
+                                loadHtml("./project/projectInfo.html");
+                            </script>
+                        </div>
                     </div>
-
-                    <!-- 프로젝트 설명 카드 -->
-                     <h1>Project</h1>
-                     <hr>
-                    <iframe id="project-card" src="./project/projectInfo.html" frameborder="0"></iframe>
                 </div>
             </div>
 
